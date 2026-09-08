@@ -1,0 +1,53 @@
+# Week 01 Reflection
+
+1. Include a link to one of your Pull Requests (PRs) at GitHub. (It should be merged and closed at this point.)
+
+GitHub Pull Request Link: https://github.com/bahintingchristopher/cse341_books/pull/5
+
+2. Include a link to one of your Issues at GitHub. (It should be closed at this point.)
+
+GitHub Issue Link: https://github.com/bahintingchristopher/cse341_books/issues/1
+
+3. Which issue took more or less time than expected? Why?
+
+Answer: The issue #3 took more time than expected, it was the implementation of all the codes to make all the connection becomes functional
+it had involved the MVC pattern, in which it took me too much time in implementing the different functions so that all the desired output will 
+be wired to and from each file (controller, models, server.js and router.js). Also, in this time, within issue #3, that is the testing time for the desired output, for example the result in
+render url if the response message was a success or not. Also, the github PR request, merging of code and updating the github issues (like putting checkmark to the Test list plan).
+In VS code, that is the time to make new files for models and controllers files and make separate branch of new code to enter and dellete the certain branch after the succesful merging in github.
+
+
+4. Include a link to your walk-though video. (It must include your name, show your web service working at Render, explain the way your `Get Single Book` controller works, and discuss status codes.):
+
+Video link: https://youtu.be/YhYpjxQus5k
+
+5.a. Include a GitHub link to a file that shows how your app uses sensitive data, such as the MongoDB connection string.
+
+GitHub link: https://github.com/bahintingchristopher/cse341_books/blob/main/.gitignore
+
+5.b. How did you store sensitive data? Why is that approach important?
+
+Answer: I put all the sensitive data in the .env (environment) file and then listed the .env in .gitignore
+        once the file listed in the .gitignore, all that content of that file will not be transmitted to the github
+        but will remain in local record / file. The database connection string from mongoDB are store in .env and then since
+        it was included in the .gitignore list, that connection string cannot be sent to github during commit.
+
+6.a. Include a GitHub link to a file that shows one other implementation decision you made.
+
+GitHub link: https://github.com/bahintingchristopher/cse341_books/tree/add-get-books-route
+
+6.b. What decision does this file show, and why did you make that choice?
+
+Answer: that link in 6.a is a link of my github branch (branchname: add-get-books-route)
+    As software developer, it is a best practice to make a separate branch from main, we will make
+    editing of code in branch and then after the editing is done, just commit the changes to the branch origin
+    and then make a PUll REQUEST from Branch  to-> Main, in this way, before the code we made merges to the main,
+    we already have a series of testing in our isolated branch and we can assure that the code that we
+    made are functional. 
+
+7. What is one specific habit or process you will work on for next week? 
+
+Answer:   Test first the actual output of each project before making PR Request from Branch to-> Main.
+            
+            
+    
