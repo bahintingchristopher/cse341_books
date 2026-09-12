@@ -6,28 +6,29 @@
 Video link:
 
 2. Provide a link to your deployed Render api-docs URL:
-Render link:
+Render link: https://cse341-books-0i9i.onrender.com/api-docs/
 
 3. Provide links to your Pull Requests (they should be merged at this point):
-Books PR:
-Authors PR:
+Books PR: https://github.com/bahintingchristopher/cse341_books/pull/14
+Authors PR: https://github.com/bahintingchristopher/cse341_books/pull/12
 
 4. Provide links to your GitHub Issues (they should be closed at this point).
-Books Issue:
-Authors Issue:
+Books Issue: https://github.com/bahintingchristopher/cse341_books/issues/10
+Authors Issue: https://github.com/bahintingchristopher/cse341_books/issues/11
 
 ## Plan vs. Implementation
 
 5. Which part of the work took more or less time than expected? Why?
 
-Answer:
+Answer: In the Part 3 of the activity took more time than expected. During the implemenation of the plan, I am again, follow the mvc patter and I have to test if the result will meet to the test plan. I made pushed the code to github that also required much time, then check the render if it has no errors, requesting for PR and then merge the PR, delete the branch and then tested the swagger for all the CRUD functionalities. So, in total, I took more time than expected in the Part 3.
 
 6. How did Swagger help you in your work this week?
 
-Answer:
+Answer: Swagger helps me to visualize the actual UI of the program. It also allow me to implement the CRUD within the window of swagger. Swagger is very helpuf to see the immediate visual output of the program.
 
 ## Week 03 Improvement
 
 7. What is one specific habit or process you will apply next week?
 
-Answer:
+
+Answer: In my case, one of the best habit that I have and I want to continue is to have a journal in all my task, this really helps me more than enough, my journal help me deeply understand on the specific task. sometimes, at glimse of my eyes, the task is so hard, but when I started to write down all the task in my journal, then the situation will change, the process have two impact, first, by reading I understand a little but when I write to the Journal, the second thing will happen, the understanding and clearer knowledge of what to do and how to implement the task correctly. Now, my plan and my goal is to continue to make a journal for all my software development task. In week 1 and week 2, Github issue is an example of my physical journal.  the github issue and my journal are very identical, the difference only is that, my physical journal is reachable anytime I want even without internet connection, I see and read anytime and very useful. 
