@@ -1,15 +1,22 @@
 import express from 'express';
-import { getBooksHandler, getBookByIdHandler} from './controllers/books.js';
+import { 
+    getBooksHandler, 
+    getBookByIdHandler,
+    createBookHandler,
+    updateBookHandler,
+    deleteBookHandler
+} from './controllers/books.js';
 import {
-	getAllAuthors,
-	getAuthorById,
-	createAuthor,
-	updateAuthor,
-	deleteAuthor,
+    getAllAuthors,
+    getAuthorById,
+    createAuthor,
+    updateAuthor,
+    deleteAuthor,
 } from './controllers/authors.js';
 
-
 const router = express.Router();
+
+// ==================== BOOKS ROUTES ====================
 
 /**
  * @openapi
@@ -25,7 +32,6 @@ const router = express.Router();
  *         description: Unable to retrieve books
  */
 router.get('/books', getBooksHandler);
-
 
 /**
  * @openapi
@@ -51,7 +57,117 @@ router.get('/books', getBooksHandler);
  */
 router.get('/books/:id', getBookByIdHandler);
 
-// get all authors, get author by id, create author, update author, delete author
+/**
+ * @openapi
+ * /books:
+ *   post:
+ *     summary: Create a new book
+ *     tags:
+ *       - Books
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - id
+ *               - authorId
+ *               - title
+ *               - publicationDate
+ *             properties:
+ *               id:
+ *                 type: string
+ *               authorId:
+ *                 type: string
+ *               title:
+ *                 type: string
+ *               publicationDate:
+ *                 type: string
+ *           example:
+ *             id: b4
+ *             authorId: a1
+ *             title: Project Hail Mary
+ *             publicationDate: 2021-05-04
+ *     responses:
+ *       201:
+ *         description: Book created successfully
+ *       400:
+ *         description: Bad request or duplicate ID / invalid authorId
+ *       500:
+ *         description: Unable to create book
+ */
+router.post('/books', createBookHandler);
+
+/**
+ * @openapi
+ * /books/{id}:
+ *   put:
+ *     summary: Update an existing book by ID
+ *     tags:
+ *       - Books
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The book ID
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - authorId
+ *               - title
+ *               - publicationDate
+ *             properties:
+ *               authorId:
+ *                 type: string
+ *               title:
+ *                 type: string
+ *               publicationDate:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Book updated successfully
+ *       400:
+ *         description: Invalid input or authorId
+ *       404:
+ *         description: Book not found
+ *       500:
+ *         description: Unable to update book
+ */
+router.put('/books/:id', updateBookHandler);
+
+/**
+ * @openapi
+ * /books/{id}:
+ *   delete:
+ *     summary: Delete a book by ID
+ *     tags:
+ *       - Books
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The book ID
+ *     responses:
+ *       204:
+ *         description: Book deleted successfully
+ *       404:
+ *         description: Book not found
+ *       500:
+ *         description: Unable to delete book
+ */
+router.delete('/books/:id', deleteBookHandler);
+
+
+// ==================== AUTHORS ROUTES ====================
 
 /**
  * @openapi
@@ -158,9 +274,6 @@ router.post('/authors', createAuthor);
  *                 type: string
  *               birthYear:
  *                 type: number
- *           example:
- *             name: Updated Author
- *             birthYear: 1981
  *     responses:
  *       200:
  *         description: Author updated
